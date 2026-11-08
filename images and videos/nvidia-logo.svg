@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 44" fill="none">
+    <!-- NVIDIA Official Crisp Monochrome White Vector Logo -->
+    <g fill="#FFFFFF">
+        <!-- Iconic Left Spiral / Claw Mark -->
+        <path d="M22 10.5c-7 0-13.2 4.4-16.5 11 3.3 6.6 9.5 11 16.5 11v-4c-5 0-9.6-3.2-12.2-7 2.6-3.8 7.2-7 12.2-7v-4z"/>
+        <path d="M22 16.2c-3.9 0-7.4 2.3-9.2 5.3 1.8 3 5.3 5.3 9.2 5.3v-3.2c-2.3 0-4.3-1.1-5.5-2.1 1.2-1 3.2-2.1 5.5-2.1v-3.2z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M22 5h23v34H22V5zm0 9.5v4c5.2 0 10 3.2 12.7 7-2.7 3.8-7.5 7-12.7 7v4c7.3 0 13.8-4.4 17.1-11-3.3-6.6-9.8-11-17.1-11zm0 4.8v3.2c2.5 0 4.8 1.1 6 2.1-1.2 1-3.5 2.1-6 2.1v3.2c4.2 0 8-2.3 9.8-5.3-1.8-3-5.6-5.3-9.8-5.3z"/>
+
+        <!-- NVIDIA Wordmark with Crystal Clear Kerning -->
+        <!-- n -->
+        <path d="M54 15h5.4v2.6h.1c1.3-1.9 3.6-3 6.2-3 5 0 8.1 3.2 8.1 8.5V36h-5.4V23.8c0-3-1.5-4.6-4-4.6-2.6 0-4.6 2-4.6 5V36H54V15z"/>
+        <!-- V -->
+        <path d="M76 15h5.8l5.5 15.6h.1L92.9 15h5.7l-8.4 21h-5.6L76 15z"/>
+        <!-- I -->
+        <path d="M102 15h5.4v21h-5.4V15z"/>
+        <!-- D -->
+        <path d="M112.5 15h8.6c7.5 0 12.5 4.5 12.5 10.5s-5 10.5-12.5 10.5h-8.6V15zm5.4 16.5h3.2c4.2 0 7-2.6 7-6s-2.8-6-7-6h-3.2v12z"/>
+        <!-- I -->
+        <path d="M138 15h5.4v21h-5.4V15z"/>
+        <!-- A (Completely independent, absolute coordinates, pristine spacing) -->
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M160 15h6l10 21h-5.5l-2-4.5h-11l-2 4.5H150l10-21zm3 4.8l-3.6 8.2h7.2L163 19.8z"/>
+    </g>
+</svg>

@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">التوني | مونتير وموشن جرافيك ديزاينر | Omar Altony</title>
+    <meta name="description"
+        content="بورتفوليو عمر رمضان التوني (التوني) - مونتير وموشن جرافيك ديزاينر محترف. إعلانات تجارية لكبار الشركات، صناع المحتوى، وأفلام وثائقية.">
+
+    <!-- Google Fonts: Cairo (Original Signature Arabic Font), Changa, IBM Plex Sans Arabic, Readex Pro, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Changa:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Readex+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Preloader Animation Screen -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-ring-wrapper">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-inner-glow"></div>
+            <div class="preloader-logo">
+                <span data-i18n="logoText">التوني</span><span class="dot">.</span>
+            </div>
+        </div>
+        <div class="preloader-tagline" data-i18n="preloaderTagline">جاري إعداد التجربة البصرية...</div>
+    </div>
+
+    <!-- Cosmic Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+        <!-- Ambient Glow / Mesh Orbs & Animated Scroll Background -->
+    <div class="ambient-bg" aria-hidden="true" id="ambientBg">
+        <!-- Poster Atmosphere Ambient Texture Overlay (Reference Poster 2 Aesthetic) -->
+        <div class="ambient-reference-poster" aria-hidden="true"></div>
+
+        <!-- Procedural Generative Deep Midnight Purple & Cosmic Violet Aurora Silk Ribbons (Living Interactive Scroll) -->
+        <div class="aurora-ribbon aurora-top-right">
+            <svg viewBox="0 0 1000 800" fill="none" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="auroraGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#c084fc" stop-opacity="0.95"/>
+                        <stop offset="35%" stop-color="#9333ea" stop-opacity="0.8"/>
+                        <stop offset="70%" stop-color="#6b21a8" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="#0e0c2a" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="auroraGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.9"/>
+                        <stop offset="45%" stop-color="#7c3aed" stop-opacity="0.65"/>
+                        <stop offset="100%" stop-color="#08071e" stop-opacity="0"/>
+                    </linearGradient>
+                    <filter id="auroraBlur1" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur stdDeviation="35"/>
+                    </filter>
+                </defs>
+                <path d="M350,0 C600,160 820,220 1000,580 L1000,0 Z" fill="url(#auroraGrad1)" filter="url(#auroraBlur1)"/>
+                <path d="M520,0 C740,240 790,460 1000,780 L1000,0 Z" fill="url(#auroraGrad2)" filter="url(#auroraBlur1)" opacity="0.9"/>
+                <path d="M280,-50 C480,180 780,280 960,520" stroke="rgba(192, 132, 252, 0.8)" stroke-width="4.5" filter="url(#auroraBlur1)"/>
+            </svg>
+        </div>
+
+        <div class="aurora-ribbon aurora-center-flow">
+            <svg viewBox="0 0 1000 700" fill="none" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="auroraGradMid" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#0b0924" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#6d28d9" stop-opacity="0.55"/>
+                        <stop offset="80%" stop-color="#a855f7" stop-opacity="0.7"/>
+                        <stop offset="100%" stop-color="#07061a" stop-opacity="0"/>
+                    </linearGradient>
+                    <filter id="auroraBlurMid" x="-30%" y="-30%" width="160%" height="160%">
+                        <feGaussianBlur stdDeviation="40"/>
+                    </filter>
+                </defs>
+                <path d="M0,350 C300,150 700,550 1000,350 L1000,700 L0,700 Z" fill="url(#auroraGradMid)" filter="url(#auroraBlurMid)"/>
+                <path d="M-50,300 C320,180 680,500 1050,320" stroke="rgba(168, 85, 247, 0.65)" stroke-width="3.5" filter="url(#auroraBlurMid)"/>
+            </svg>
+        </div>
+
+        <div class="aurora-ribbon aurora-bottom-left">
+            <svg viewBox="0 0 1000 800" fill="none" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="auroraGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#581c87" stop-opacity="0.85"/>
+                        <stop offset="45%" stop-color="#7c3aed" stop-opacity="0.65"/>
+                        <stop offset="100%" stop-color="#0b0922" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="auroraGrad4" x1="0%" y1="100%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#a855f7" stop-opacity="0.85"/>
+                        <stop offset="55%" stop-color="#4c1d95" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#050414" stop-opacity="0"/>
+                    </linearGradient>
+                    <filter id="auroraBlur2" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur stdDeviation="40"/>
+                    </filter>
+                </defs>
+                <path d="M0,800 C280,640 480,590 700,800 Z" fill="url(#auroraGrad3)" filter="url(#auroraBlur2)"/>
+                <path d="M0,380 C220,590 480,670 780,800 L0,800 Z" fill="url(#auroraGrad4)" filter="url(#auroraBlur2)" opacity="0.88"/>
+                <path d="M-60,580 C240,540 420,670 640,860" stroke="rgba(192, 132, 252, 0.75)" stroke-width="5" filter="url(#auroraBlur2)"/>
+            </svg>
+        </div>
+
+        <!-- Horizontal Motion Speed Streaks matching Reference Image 3 -->
+        <div class="ambient-speed-lines" aria-hidden="true"></div>
+        <div class="glow-streak streak-1" aria-hidden="true"></div>
+        <div class="glow-streak streak-2" aria-hidden="true"></div>
+        <div class="glow-streak streak-3" aria-hidden="true"></div>
+
+        <!-- Procedural Vector Dot Matrix Grids (Sharp at Any Screen Size) -->
+        <div class="vector-grid-dots dots-top-left">
+            <svg width="100%" height="100%">
+                <defs>
+                    <pattern id="dotPatternTL" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+                        <circle cx="11" cy="11" r="1.6" fill="rgba(56, 189, 248, 0.35)"/>
+                    </pattern>
+                    <radialGradient id="fadeMaskTL" cx="10%" cy="10%" r="80%">
+                        <stop offset="0%" stop-color="white" stop-opacity="1"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                    </radialGradient>
+                    <mask id="maskTL">
+                        <rect width="100%" height="100%" fill="url(#fadeMaskTL)"/>
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dotPatternTL)" mask="url(#maskTL)"/>
+            </svg>
+        </div>
+
+        <div class="vector-grid-dots dots-bottom-right">
+            <svg width="100%" height="100%">
+                <defs>
+                    <pattern id="dotPatternBR" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+                        <circle cx="11" cy="11" r="1.6" fill="rgba(56, 189, 248, 0.35)"/>
+                    </pattern>
+                    <radialGradient id="fadeMaskBR" cx="90%" cy="90%" r="80%">
+                        <stop offset="0%" stop-color="white" stop-opacity="1"/>
+                        <stop offset="55%" stop-color="white" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                    </radialGradient>
+                    <mask id="maskBR">
+                        <rect width="100%" height="100%" fill="url(#fadeMaskBR)"/>
+                    </mask>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dotPatternBR)" mask="url(#maskBR)"/>
+            </svg>
+        </div>
+
+        <!-- Translucent Video Editor Emblem -->
+        <div class="cosmic-play-symbol" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="35,22 80,50 35,78" fill="rgba(56, 189, 248, 0.2)" stroke="rgba(147, 197, 253, 0.55)" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Ambient Volumetric Orbs (Distributed across page scroll) -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-middle"></div>
+        <div class="orb orb-lower"></div>
+    </div>
+
+    <!-- Floating Pill Navigation -->
+    <header class="nav-container">
+        <nav class="floating-pill-nav">
+            <div class="logo">
+                <span data-i18n="logoText">التوني</span><span class="dot">.</span>
+            </div>
+            <ul class="nav-links">
+                <span class="nav-indicator-pill" id="navIndicatorPill" aria-hidden="true"></span>
+                <li><a href="#" class="nav-btn active" data-page="home" data-i18n="navHome">الرئيسية</a></li>
+                <li><a href="#" class="nav-btn" data-page="contact" data-i18n="navContact">تواصل معي</a></li>
+                <li><a href="#" class="nav-btn" data-page="terms" data-i18n="navTerms">شروط العمل</a></li>
+                <li><a href="#" class="nav-btn" data-page="about" data-i18n="navAbout">عن التوني</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-switch" id="langToggle" aria-label="Toggle Language">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+
+        <!-- ==========================================
+             1. HOME SECTION
+             ========================================== -->
+        <section id="home-section" class="page-section active">
+
+            <!-- Hero Section -->
+            <header class="hero reveal">
+                <!-- Main Hero Headline: SCALE YOUR BUSINESS WITH ALTONY -->
+                <h1 class="hero-title">
+                    <span class="hero-white-text" data-i18n="heroTitlePart1">SCALE </span>
+                    <span class="twinkle-wrapper">
+                        <span class="twinkle-text" data-i18n="heroTwinkleWord">YOUR BUSINESS</span>
+                        <span class="stars-cluster" aria-hidden="true">
+                            <span class="star star-1">✦</span>
+                            <span class="star star-2">★</span>
+                            <span class="star star-3">✦</span>
+                            <span class="star star-4">★</span>
+                        </span>
+                    </span>
+                    <span class="gradient-cyan" data-i18n="heroTitlePart2"> WITH ALTONY</span>
+                </h1>
+
+                <!-- Subtitle with smaller font (video editor & motion graphic) -->
+                <div class="hero-subtitle-badge">
+                    <span class="sparkle-icon">✨</span>
+                    <span class="subtitle-text" data-i18n="heroSubtitle">video editor & motion graphic</span>
+                    <span class="sparkle-icon">✨</span>
+                </div>
+
+                <!-- Floating Software Logos (After Effects, Premiere Pro, DaVinci Resolve - Clean without text) -->
+                <div class="hero-floating-elements" aria-hidden="true">
+                    <div class="floating-badge badge-ae" title="After Effects">
+                        <img src="images and videos/after-effects-logo.png" alt="After Effects"
+                            class="floating-logo-img">
+                    </div>
+
+                    <div class="floating-badge badge-pr" title="Premiere Pro">
+                        <img src="images and videos/premiere-pro-logo.png" alt="Premiere Pro" class="floating-logo-img">
+                    </div>
+
+                    <div class="floating-badge badge-davinci" title="DaVinci Resolve">
+                        <img src="images and videos/davinci-resolve-logo.png" alt="DaVinci Resolve"
+                            class="floating-logo-img">
+                    </div>
+                </div>
+
+                <!-- CTA Buttons Group -->
+                <div class="hero-cta-group">
+                    <a href="#work-section" class="primary-btn hero-btn" id="exploreWorkBtn">
+                        <span data-i18n="btnBrowse">استكشف أعمالي</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                            stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <button class="secondary-btn hero-btn nav-btn" data-page="terms">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span data-i18n="btnTermsHero">شروط العمل</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 1. SHOWREEL (Directly below intro buttons, compact & attractive) -->
+            <div class="showreel-compact-wrapper reveal" id="showreel-section">
+                <div class="showreel-compact-badge">
+                    <span class="reel-dot"></span>
+                    <span class="showreel-tag-text" data-i18n="showreelPill">SHOWREEL</span>
+                </div>
+
+                <!-- Showreel Video Container with Glass Frame -->
+                <div class="video-container">
+                    <iframe
+                        src="https://player.vimeo.com/video/1091220604?autoplay=0&loop=1&title=0&byline=0&portrait=0"
+                        width="100%" height="100%" frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        title="Altony Showreel"></iframe>
+                </div>
+            </div>
+
+            <!-- 2. STATS COUNTER STRIP (Directly after Showreel, with count-up animation) -->
+            <div class="stats-strip reveal" id="stats-counter-strip">
+                <div class="stat-box">
+                    <div class="stat-box-number" data-target="4" data-prefix="+" data-suffix="">+0</div>
+                    <div class="stat-box-label" data-i18n="stat1Label">سنوات خبرة</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-number" data-target="3" data-prefix="+" data-suffix="">+0</div>
+                    <div class="stat-box-label" data-i18n="stat2Label">سنوات في Carrots</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-number" data-target="400" data-prefix="+" data-suffix="M">+0M</div>
+                    <div class="stat-box-label" data-i18n="stat3Label">مشاهدة حصدتها المشاريع</div>
+                </div>
+            </div>
+
+            <!-- 3. BRAND SUCCESS & PARTNERS MARQUEE SLIDER (Infinite Monochrome Loop with Controls) -->
+            <div class="trusted-container reveal">
+                <div class="trusted-header-pill">
+                    <span class="trusted-dot"></span>
+                    <span class="trusted-tag" data-i18n="trustedTag">نجاح وشراكات مع كبرى العلامات التجارية</span>
+                </div>
+
+                <div class="brands-marquee-wrapper">
+                    <!-- Left Arrow Control -->
+                    <button class="brands-nav-arrow brands-prev-btn" id="brandsPrevBtn" aria-label="السابق">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Infinite Slider Track (Sleek Monochrome Style) -->
+                    <div class="brands-slider-container" id="brandsMarqueeContainer">
+                        <div class="brands-track" id="brandsTrack">
+                            <div class="brand-item" title="PUBG Mobile">
+                                <img src="images and videos/pubg-clean.png" alt="PUBG Mobile"
+                                    class="brand-logo-img logo-pubg">
+                            </div>
+                            <div class="brand-item" title="Yango Play">
+                                <img src="images and videos/yango-clean.png" alt="Yango Play"
+                                    class="brand-logo-img logo-yango">
+                            </div>
+                            <div class="brand-item" title="Samsung">
+                                <img src="images and videos/samsung-clean.png" alt="Samsung"
+                                    class="brand-logo-img logo-samsung">
+                            </div>
+                            <div class="brand-item" title="EGYGAB">
+                                <img src="images and videos/egygab-clean.png" alt="EGYGAB"
+                                    class="brand-logo-img logo-egygab">
+                            </div>
+                            <div class="brand-item" title="ط£ط¯ظ†ظˆظƒ ظ„ظ„ط؛ط§ط² - ADNOC Gas">
+                                <img src="images and videos/adnoc-clean.png" alt="ADNOC Gas"
+                                    class="brand-logo-img logo-adnoc">
+                            </div>
+                            <div class="brand-item" title="Carrots Agency">
+                                <img src="images and videos/carrots-clean.png" alt="Carrots Agency"
+                                    class="brand-logo-img logo-carrots">
+                            </div>
+                            <div class="brand-item" title="Voral Media">
+                                <img src="images and videos/voral-clean.png" alt="Voral Media"
+                                    class="brand-logo-img logo-voral">
+                            </div>
+                            <div class="brand-item" title="NVIDIA">
+                                <img src="images and videos/nvidia-logo.svg" alt="NVIDIA"
+                                    class="brand-logo-img logo-nvidia">
+                            </div>
+                            <div class="brand-item" title="Insomnia Egypt">
+                                <img src="images and videos/insomnia-logo.svg" alt="Insomnia"
+                                    class="brand-logo-img logo-insomnia">
+                            </div>
+                            <!-- Set 2 for seamless infinite loop -->
+                            <div class="brand-item" title="PUBG Mobile">
+                                <img src="images and videos/pubg-clean.png" alt="PUBG Mobile"
+                                    class="brand-logo-img logo-pubg">
+                            </div>
+                            <div class="brand-item" title="Yango Play">
+                                <img src="images and videos/yango-clean.png" alt="Yango Play"
+                                    class="brand-logo-img logo-yango">
+                            </div>
+                            <div class="brand-item" title="Samsung">
+                                <img src="images and videos/samsung-clean.png" alt="Samsung"
+                                    class="brand-logo-img logo-samsung">
+                            </div>
+                            <div class="brand-item" title="EGYGAB">
+                                <img src="images and videos/egygab-clean.png" alt="EGYGAB"
+                                    class="brand-logo-img logo-egygab">
+                            </div>
+                            <div class="brand-item" title="ط£ط¯ظ†ظˆظƒ ظ„ظ„ط؛ط§ط² - ADNOC Gas">
+                                <img src="images and videos/adnoc-clean.png" alt="ADNOC Gas"
+                                    class="brand-logo-img logo-adnoc">
+                            </div>
+                            <div class="brand-item" title="Carrots Agency">
+                                <img src="images and videos/carrots-clean.png" alt="Carrots Agency"
+                                    class="brand-logo-img logo-carrots">
+                            </div>
+                            <div class="brand-item" title="Voral Media">
+                                <img src="images and videos/voral-clean.png" alt="Voral Media"
+                                    class="brand-logo-img logo-voral">
+                            </div>
+                            <div class="brand-item" title="NVIDIA">
+                                <img src="images and videos/nvidia-logo.svg" alt="NVIDIA"
+                                    class="brand-logo-img logo-nvidia">
+                            </div>
+                            <div class="brand-item" title="Insomnia Egypt">
+                                <img src="images and videos/insomnia-logo.svg" alt="Insomnia"
+                                    class="brand-logo-img logo-insomnia">
+                            </div>
+                            <!-- Set 3 for seamless infinite loop -->
+                            <div class="brand-item" title="PUBG Mobile">
+                                <img src="images and videos/pubg-clean.png" alt="PUBG Mobile"
+                                    class="brand-logo-img logo-pubg">
+                            </div>
+                            <div class="brand-item" title="Yango Play">
+                                <img src="images and videos/yango-clean.png" alt="Yango Play"
+                                    class="brand-logo-img logo-yango">
+                            </div>
+                            <div class="brand-item" title="Samsung">
+                                <img src="images and videos/samsung-clean.png" alt="Samsung"
+                                    class="brand-logo-img logo-samsung">
+                            </div>
+                            <div class="brand-item" title="EGYGAB">
+                                <img src="images and videos/egygab-clean.png" alt="EGYGAB"
+                                    class="brand-logo-img logo-egygab">
+                            </div>
+                            <div class="brand-item" title="ط£ط¯ظ†ظˆظƒ ظ„ظ„ط؛ط§ط² - ADNOC Gas">
+                                <img src="images and videos/adnoc-clean.png" alt="ADNOC Gas"
+                                    class="brand-logo-img logo-adnoc">
+                            </div>
+                            <div class="brand-item" title="Carrots Agency">
+                                <img src="images and videos/carrots-clean.png" alt="Carrots Agency"
+                                    class="brand-logo-img logo-carrots">
+                            </div>
+                            <div class="brand-item" title="Voral Media">
+                                <img src="images and videos/voral-clean.png" alt="Voral Media"
+                                    class="brand-logo-img logo-voral">
+                            </div>
+                            <div class="brand-item" title="NVIDIA">
+                                <img src="images and videos/nvidia-logo.svg" alt="NVIDIA"
+                                    class="brand-logo-img logo-nvidia">
+                            </div>
+                            <div class="brand-item" title="Insomnia Egypt">
+                                <img src="images and videos/insomnia-logo.svg" alt="Insomnia"
+                                    class="brand-logo-img logo-insomnia">
+                            </div>
+                            <!-- Set 4 for seamless infinite loop -->
+                            <div class="brand-item" title="PUBG Mobile">
+                                <img src="images and videos/pubg-clean.png" alt="PUBG Mobile"
+                                    class="brand-logo-img logo-pubg">
+                            </div>
+                            <div class="brand-item" title="Yango Play">
+                                <img src="images and videos/yango-clean.png" alt="Yango Play"
+                                    class="brand-logo-img logo-yango">
+                            </div>
+                            <div class="brand-item" title="Samsung">
+                                <img src="images and videos/samsung-clean.png" alt="Samsung"
+                                    class="brand-logo-img logo-samsung">
+                            </div>
+                            <div class="brand-item" title="EGYGAB">
+                                <img src="images and videos/egygab-clean.png" alt="EGYGAB"
+                                    class="brand-logo-img logo-egygab">
+                            </div>
+                            <div class="brand-item" title="ط£ط¯ظ†ظˆظƒ ظ„ظ„ط؛ط§ط² - ADNOC Gas">
+                                <img src="images and videos/adnoc-clean.png" alt="ADNOC Gas"
+                                    class="brand-logo-img logo-adnoc">
+                            </div>
+                            <div class="brand-item" title="Carrots Agency">
+                                <img src="images and videos/carrots-clean.png" alt="Carrots Agency"
+                                    class="brand-logo-img logo-carrots">
+                            </div>
+                            <div class="brand-item" title="Voral Media">
+                                <img src="images and videos/voral-clean.png" alt="Voral Media"
+                                    class="brand-logo-img logo-voral">
+                            </div>
+                            <div class="brand-item" title="NVIDIA">
+                                <img src="images and videos/nvidia-logo.svg" alt="NVIDIA"
+                                    class="brand-logo-img logo-nvidia">
+                            </div>
+                            <div class="brand-item" title="Insomnia Egypt">
+                                <img src="images and videos/insomnia-logo.svg" alt="Insomnia"
+                                    class="brand-logo-img logo-insomnia">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Arrow Control -->
+                    <button class="brands-nav-arrow brands-next-btn" id="brandsNextBtn" aria-label="التالي">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. CATEGORIES & FEATURED WORK SECTION (All 7 Requested Categories) -->
+            <section class="categories" id="work-section">
+                <div class="section-header reveal">
+                    <span class="section-tag" data-i18n="selectedWorksTag">معرض الأعمال والتصنيفات</span>
+                    <h2 class="section-title" data-i18n="categoriesTitle">المشاريع والتخصصات الإبداعية</h2>
+                </div>
+
+                <!-- Bento Grid Container matching user mockup Image 5 -->
+                <div class="bento-grid-container reveal">
+
+                    <!-- 01. Tall Featured Card: Top Creators (Left side) -->
+                    <div class="bento-card bento-card-featured gold-highlight" data-category="top-creators"
+                        data-category-modal="top-creators">
+                        <div class="bento-card-bg bento-bg-creators"></div>
+                        <div class="bento-card-overlay"></div>
+
+                        <div class="bento-top-row">
+                            <span class="bento-badge gold-badge">
+                                <span class="badge-icon">👑</span>
+                                <span data-i18n="badgeMostProjects">أكبر عدد مشاريع</span>
+                                <span class="badge-icon">👑</span>
+                            </span>
+                        </div>
+
+                        <div class="bento-bottom-group">
+                            <div class="bento-content-body">
+                                <h3 class="bento-title" data-i18n="catTopCreators">
+                                    <span class="bento-title-main">كبار صناع المحتوى</span>
+                                </h3>
+                            </div>
+
+                            <div class="bento-bottom-row single-arrow">
+                                <span class="circle-arrow-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                        stroke="currentColor" stroke-width="2.5">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: 2 Rows matching user mockup -->
+                    <div class="bento-subgrid">
+                        <!-- Top Row: 2 Cards (02 Doctors & 03 UAE) -->
+                        <div class="bento-subgrid-row bento-row-top">
+                            <!-- 02. Doctors -->
+                            <div class="bento-card bento-card-sub green-highlight" data-category="doctors"
+                                data-category-modal="doctors">
+                                <div class="bento-card-bg bento-bg-doctors"></div>
+                                <div class="bento-card-overlay"></div>
+
+                                <div class="bento-top-row">
+                                    <span class="bento-badge green-badge">
+                                        <span class="badge-icon">🔥</span>
+                                        <span data-i18n="badgeDoctors">الأكثر طلباً</span>
+                                        <span class="badge-icon">🔥</span>
+                                    </span>
+                                </div>
+
+                                <div class="bento-bottom-group">
+                                    <div class="bento-content-body">
+                                        <h3 class="bento-title" data-i18n="catDoctors">
+                                            <span class="bento-title-main">الأطباء والمجال الطبي</span>
+                                        </h3>
+                                    </div>
+
+                                    <div class="bento-bottom-row single-arrow">
+                                        <span class="circle-arrow-btn">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 03. UAE Special -->
+                            <div class="bento-card bento-card-sub green-highlight" data-category="uae-special"
+                                data-category-modal="uae-special">
+                                <div class="bento-card-bg bento-bg-uae"></div>
+                                <div class="bento-card-overlay"></div>
+
+                                <div class="bento-top-row">
+                                    <span class="bento-badge green-badge">
+                                        <span class="badge-icon">💎</span>
+                                        <span data-i18n="badgeUAE">الأكثر فخامة</span>
+                                        <span class="badge-icon">💎</span>
+                                    </span>
+                                </div>
+
+                                <div class="bento-bottom-group">
+                                    <div class="bento-content-body">
+                                        <h3 class="bento-title" data-i18n="catUAESpecial">
+                                            <span class="bento-title-main">المحتوى الخاص بالإمارات</span>
+                                        </h3>
+                                    </div>
+
+                                    <div class="bento-bottom-row single-arrow">
+                                        <span class="circle-arrow-btn">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row: 3 Cards (04 Brands, 05 Cinema, 06 Media) -->
+                        <div class="bento-subgrid-row bento-row-bottom">
+                            <!-- 04. Branded Ads -->
+                            <div class="bento-card bento-card-sub green-highlight" data-category="branded-ads"
+                                data-category-modal="branded-ads">
+                                <div class="bento-card-bg bento-bg-brands"></div>
+                                <div class="bento-card-overlay"></div>
+
+                                <div class="bento-top-row">
+                                    <span class="bento-badge green-badge">
+                                        <span class="badge-icon">⭐</span>
+                                        <span data-i18n="badgeBranded">الأكثر شهرة</span>
+                                        <span class="badge-icon">⭐</span>
+                                    </span>
+                                </div>
+
+                                <div class="bento-bottom-group">
+                                    <div class="bento-content-body">
+                                        <h3 class="bento-title" data-i18n="catBrandedAds">
+                                            <span class="bento-title-main">إعلانات العلامات التجارية</span>
+                                        </h3>
+                                    </div>
+
+                                    <div class="bento-bottom-row single-arrow">
+                                        <span class="circle-arrow-btn">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 05. Short Film & Cinema -->
+                            <div class="bento-card bento-card-sub green-highlight" data-category="short-film"
+                                data-category-modal="short-film">
+                                <div class="bento-card-bg bento-bg-films"></div>
+                                <div class="bento-card-overlay"></div>
+
+                                <div class="bento-top-row">
+                                    <span class="bento-badge green-badge">
+                                        <span class="badge-icon">💜</span>
+                                        <span data-i18n="badgeShortFilms">الأكثر حباً لي</span>
+                                        <span class="badge-icon">🎬</span>
+                                    </span>
+                                </div>
+
+                                <div class="bento-bottom-group">
+                                    <div class="bento-content-body">
+                                        <h3 class="bento-title" data-i18n="catShortFilms">
+                                            <span class="bento-title-main">أفلام وثائقية ومونتاج سينمائي</span>
+                                        </h3>
+                                    </div>
+
+                                    <div class="bento-bottom-row single-arrow">
+                                        <span class="circle-arrow-btn">
+                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 06. Media & Post Production -->
+                            <div class="bento-card bento-card-sub green-highlight" data-category="media-post"
+                                data-category-modal="media-post">
+                                <div class="bento-card-bg bento-bg-media"></div>
+                                <div class="bento-card-overlay"></div>
+
+                                <div class="bento-top-row">
+                                    <span class="bento-badge green-badge">
+                                        <span class="badge-icon">📊</span>
+                                        <span data-i18n="badgeMediaPost">الأكثر جذباً للعملاء</span>
+                                        <span class="badge-icon">📊</span>
+                                    </span>
+                                </div>
+
+                                <div class="bento-bottom-group">
+                                    <div class="bento-content-body">
+                                        <h3 class="bento-title" data-i18n="catMediaPost">
+                                            <span class="bento-title-main">ميديا وبوست برودكشن</span>
+                                        </h3>
+                                    </div>
+
+                                    <div class="bento-bottom-row single-arrow">
+                                        <span class="circle-arrow-btn">
+                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Slider with REAL CLIENT PHOTOS -->
+            <section class="testimonials">
+                <div class="section-header reveal">
+                    <span class="section-tag" data-i18n="clientsTag">ثقة ونتائج واقعية</span>
+                    <h2 class="section-title" data-i18n="testimonialsTitle">آراء شركاء النجاح</h2>
+                </div>
+
+                <div class="testimonials-marquee-wrapper" id="testimonialsSlider">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <!-- Ali Gelany (Updated with Sticky Notes photo) -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/ali-gelany-notes.jpg" alt="Ali Gelany"
+                                            class="author-avatar avatar-gelany">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test1Name">علي جيلاني</span>
+                                            <span class="client-role" data-i18n="test1Role">صانع محتوى وبودكاست
+                                                الكبسولة</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test1Msg">لو قولتلك أنت عالمي.. قليلة عليك والله 😀</p>
+                            </div>
+                        </div>
+
+                        <!-- Youssef Magdy (Updated quote) -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/youssef-magdy.jpg" alt="Youssef Magdy"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test2Name">يوسف مجدي</span>
+                                            <span class="client-role" data-i18n="test2Role">صانع محتوى (Voral
+                                                Media)</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test2Msg">شكراً جداً لـ عمر التوني، تحفة تحفة تحفة.</p>
+                            </div>
+                        </div>
+
+                        <!-- Helmy Hazem -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/helmy-hazem.jpg" alt="Helmy Hazem"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test3Name">حلمي حازم</span>
+                                            <span class="client-role" data-i18n="test3Role">صانع محتوى وريلز</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test3Msg">جامد جداً يا توني يا اللي مزغلل عيني بشغلك ✨</p>
+                            </div>
+                        </div>
+
+                        <!-- Colonel Haitham (Centered face) -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/colonel-haitham.png" alt="Colonel Haitham"
+                                            class="author-avatar avatar-haitham">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test4Name">العقيد هيثم</span>
+                                            <span class="client-role" data-i18n="test4Role">مؤسس محتوى وقائد
+                                                مشاريع</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test4Msg">تسلم إيديكوا يا شباب، عاملين عظمة حقيقية تستحق كل التقدير.</p>
+                            </div>
+                        </div>
+
+                        <!-- egygab (HD Logo unclipped) -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/egygab-hd.png" alt="egygab"
+                                            class="author-avatar avatar-egygab">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test5Name">egygab</span>
+                                            <span class="client-role" data-i18n="test5Role">شركة تطوير عقاري كبرى</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test5Msg">حلو أوي أوي ومتقن لأقصى درجة، شرفتونا.</p>
+                            </div>
+                        </div>
+
+                        <!-- UAE Project -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/uae-project.jpg" alt="UAE Project"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test6Name">مشروع الإمارات (UAE)</span>
+                                            <span class="client-role" data-i18n="test6Role">حملة إعلانية دولية</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test6Msg">يا ياسمين (الأكونت مانجر) شو هذا! ما اتوقعت يطلع حلو لها الدرجة.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- SET 2 FOR SEAMLESS INFINITE LOOP -->
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/ali-gelany-notes.jpg" alt="Ali Gelany"
+                                            class="author-avatar avatar-gelany">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test1Name">علي جيلاني</span>
+                                            <span class="client-role" data-i18n="test1Role">صانع محتوى وبودكاست
+                                                الكبسولة</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test1Msg">لو قولتلك أنت عالمي.. قليلة عليك والله 😀</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/youssef-magdy.jpg" alt="Youssef Magdy"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test2Name">يوسف مجدي</span>
+                                            <span class="client-role" data-i18n="test2Role">صانع محتوى (Voral
+                                                Media)</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test2Msg">شكراً جداً لـ عمر التوني، تحفة تحفة تحفة.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/helmy-hazem.jpg" alt="Helmy Hazem"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test3Name">حلمي حازم</span>
+                                            <span class="client-role" data-i18n="test3Role">صانع محتوى وريلز</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test3Msg">جامد جداً يا توني يا اللي مزغلل عيني بشغلك ✨</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/colonel-haitham.png" alt="Colonel Haitham"
+                                            class="author-avatar avatar-haitham">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test4Name">العقيد هيثم</span>
+                                            <span class="client-role" data-i18n="test4Role">مؤسس محتوى وقائد
+                                                مشاريع</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test4Msg">تسلم إيديكوا يا شباب، عاملين عظمة حقيقية تستحق كل التقدير.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/egygab-hd.png" alt="egygab"
+                                            class="author-avatar avatar-egygab">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test5Name">egygab</span>
+                                            <span class="client-role" data-i18n="test5Role">شركة تطوير عقاري كبرى</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test5Msg">حلو أوي أوي ومتقن لأقصى درجة، شرفتونا.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-message">
+                            <div class="chat-bubble">
+                                <div class="bubble-header">
+                                    <div class="author-info">
+                                        <img src="images and videos/uae-project.jpg" alt="UAE Project"
+                                            class="author-avatar">
+                                        <div>
+                                            <span class="chat-name" data-i18n="test6Name">مشروع الإمارات (UAE)</span>
+                                            <span class="client-role" data-i18n="test6Role">حملة إعلانية دولية</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-symbol">“</span>
+                                </div>
+                                <p data-i18n="test6Msg">يا ياسمين (الأكونت مانجر) شو هذا! ما اتوقعت يطلع حلو لها الدرجة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ==========================================
+             2. TOP CONTENT CREATORS HUB
+             ========================================== -->
+        <section id="creators-section" class="page-section">
+            <div class="creators-hub">
+                <!-- Top Back to Projects Navigation Button -->
+                <div class="creators-back-nav reveal">
+                    <button class="back-to-home-btn nav-btn" data-page="home">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span data-i18n="backToProjectsBtn">← العودة إلى كافة المشاريع</span>
+                    </button>
+                </div>
+
+                <div class="section-header text-center reveal">
+                    <span class="section-tag" data-i18n="creatorsHubTag">نخبة صناع المحتوى</span>
+                    <h2 class="section-title" data-i18n="creatorsHubTitle">أعمال وتجارب كبار الكريتورز</h2>
+                </div>
+
+                <!-- Tabs Bar for Switching Creators -->
+                <div class="creators-tabs-bar reveal">
+                    <button class="creator-tab-btn active" data-creator="maysem">🌟 Maysem (Yango Play)</button>
+                    <button class="creator-tab-btn" data-creator="youssef">Youssef Magdy</button>
+                    <button class="creator-tab-btn" data-creator="gelany">Ali Gelany (الكبسولة)</button>
+                    <button class="creator-tab-btn" data-creator="scenes">شارع العلوم & حسام & حلمي</button>
+                </div>
+
+                <!-- Creator 1: Maysem (Yango Play) -->
+                <div class="creator-showcase-panel active" id="creator-maysem">
+                    <div class="style-details reveal">
+                        <h3 data-i18n="maysemTitle">ميسَم — مديرة العلاقات العامة (PR Manager - Yango Play)</h3>
+                        <div class="rich-content" data-i18n="maysemStyleDesc">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Videos Grid with Fallback -->
+                    <div class="shorts-grid reveal">
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/r1fWU7gLwv4?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Reel 01 - Promo Cut</span>
+                                <a href="https://youtu.be/r1fWU7gLwv4" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/0trakt7Bs-o?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Reel 02 - Feature Showcase</span>
+                                <a href="https://youtu.be/0trakt7Bs-o" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/Z5W4eK21FPI?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Reel 03 - Kinetic Motion</span>
+                                <a href="https://youtu.be/Z5W4eK21FPI" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator 2: Youssef Magdy -->
+                <div class="creator-showcase-panel" id="creator-youssef">
+                    <div class="style-details reveal">
+                        <h3 data-i18n="youssefTitle">يوسف مجدي — صانع محتوى (Voral Media)</h3>
+                        <div class="rich-content" data-i18n="youssefStyleDesc">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <div class="shorts-grid reveal">
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/nQ8kGmGKNT4?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Video 01 - Business Analysis</span>
+                                <a href="https://youtu.be/nQ8kGmGKNT4" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/zN6yHM2Kw58?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Video 02 - Viral Retention</span>
+                                <a href="https://youtu.be/zN6yHM2Kw58" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/r1fWU7gLwv4?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Video 03 - Storytelling</span>
+                                <a href="https://youtu.be/r1fWU7gLwv4" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator 3: Ali Gelany -->
+                <div class="creator-showcase-panel" id="creator-gelany">
+                    <div class="style-details reveal">
+                        <h3 data-i18n="gelanyTitle">علي جيلاني — بودكاست الكبسولة ومنصة Carrots</h3>
+                        <div class="rich-content" data-i18n="gelanyStyleDesc">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <div class="shorts-grid reveal">
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/0trakt7Bs-o?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">الكبسولة - حلقة حوارية</span>
+                                <a href="https://youtu.be/0trakt7Bs-o" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/Z5W4eK21FPI?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">Carrots Production</span>
+                                <a href="https://youtu.be/Z5W4eK21FPI" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creator 4: Scenes Street & Hossam & Helmy -->
+                <div class="creator-showcase-panel" id="creator-scenes">
+                    <div class="style-details reveal">
+                        <h3 data-i18n="scenesTitle">شارع العلوم & حسام الإمام & حلمي حازم</h3>
+                        <div class="rich-content" data-i18n="scenesStyleDesc">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+
+                    <div class="shorts-grid reveal">
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/nQ8kGmGKNT4?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">شارع العلوم - موشن تجارب</span>
+                                <a href="https://youtu.be/nQ8kGmGKNT4" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="short-video-card">
+                            <div class="short-video-frame">
+                                <iframe src="https://www.youtube.com/embed/zN6yHM2Kw58?rel=0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <div class="video-fallback-bar">
+                                <span class="video-title-label">حسام الإمام & حلمي حازم</span>
+                                <a href="https://youtu.be/zN6yHM2Kw58" target="_blank" rel="noopener noreferrer"
+                                    class="direct-watch-link">
+                                    <span>مشاهدة مباشرة</span> ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <button class="secondary-btn nav-btn" data-page="home">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span data-i18n="backBtn">الرجوع للرئيسية</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. ABOUT SECTION WITH OMAR ALTONY'S REAL PHOTO
+             ========================================== -->
+        <section id="about-section" class="page-section">
+            <div class="about-container">
+
+                <!-- Portrait Photo Card with Omar's Attached Photo -->
+                <div class="about-image-wrapper reveal">
+                    <div class="about-avatar-card">
+                        <div class="avatar-glow-effect"></div>
+                        <img src="images and videos/altony-about.png" alt="Omar Ramadan Altony Profile Photo"
+                            class="about-avatar-img">
+
+                        <div class="avatar-status-pill">
+                            <span class="status-pulse-dot"></span>
+                            <span data-i18n="statusAvailable">متاح للمشاريع والشراكات الكبرى</span>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="about-stat-row">
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label" data-i18n="statExp">سنوات خبرة</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label" data-i18n="statCarrots">سنوات في Carrots</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">400M+</span>
+                            <span class="stat-label" data-i18n="statViews">مشاهدة حصدتها المشاريع</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="about-text-content reveal" style="transition-delay: 0.2s;">
+                    <div class="section-header text-left">
+                        <span class="section-tag" data-i18n="aboutTag">✨ عن صانع الإبداع</span>
+                        <h2 class="section-title text-left" data-i18n="aboutTitle">عمر رمضان التوني</h2>
+                        <div class="full-name-highlight" data-i18n="fullNameDisplay">
+                            Senior Video Editor & Motion Designer
+                        </div>
+                    </div>
+
+                    <!-- Lead Intro Box -->
+                    <div class="about-lead-card">
+                        <p data-i18n="aboutIntroLead">
+                            أنا <strong>عمر رمضان التوني</strong>، مونتير وموشن جرافيك ديزاينر بخبرة <strong>4 سنوات</strong> في صناعة المحتوى الإبداعي، منها <strong>3 سنوات كاملة في شركة Carrots</strong> (حتى أكتوبر 2026).
+                        </p>
+                    </div>
+
+                    <!-- Structured Highlights Grid (4 Glass Cards) -->
+                    <div class="about-highlights-grid">
+                        <div class="about-highlight-card">
+                            <div class="highlight-card-top">
+                                <span class="highlight-card-icon">⚡</span>
+                                <h4 data-i18n="aboutH1Title">إعلانات تجارية كبرى</h4>
+                            </div>
+                            <div class="highlight-chips" dir="ltr">
+                                <span class="highlight-chip">Yango Play</span>
+                                <span class="highlight-chip">PUBG Mobile</span>
+                                <span class="highlight-chip">Samsung</span>
+                            </div>
+                        </div>
+
+                        <div class="about-highlight-card">
+                            <div class="highlight-card-top">
+                                <span class="highlight-card-icon">👑</span>
+                                <h4 data-i18n="aboutH2Title">كبار صناع المحتوى</h4>
+                            </div>
+                            <div class="highlight-chips">
+                                <span class="highlight-chip">شارع العلوم</span>
+                                <span class="highlight-chip">يوسف مجدي</span>
+                                <span class="highlight-chip">علي جيلاني</span>
+                                <span class="highlight-chip">حسام الإمام</span>
+                                <span class="highlight-chip">حلمي حازم</span>
+                                <span class="highlight-chip">ميثم</span>
+                            </div>
+                        </div>
+
+                        <div class="about-highlight-card">
+                            <div class="highlight-card-top">
+                                <span class="highlight-card-icon">🎬</span>
+                                <h4 data-i18n="aboutH3Title">أفلام وثائقية وسينمائية</h4>
+                            </div>
+                            <div class="highlight-chips">
+                                <span class="highlight-chip">فيلم فلسطين (إدارة فريق البوست)</span>
+                                <span class="highlight-chip">فيلم Ctrl Z الخيالي</span>
+                            </div>
+                        </div>
+
+                        <div class="about-highlight-card">
+                            <div class="highlight-card-top">
+                                <span class="highlight-card-icon">🏢</span>
+                                <h4 data-i18n="aboutH4Title">المجال العقاري والتسويقي</h4>
+                            </div>
+                            <div class="highlight-chips">
+                                <span class="highlight-chip">سلسلة وثائقية لشركة egygab</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mentorship & Current Role Box -->
+                    <div class="about-mentor-card">
+                        <div class="mentor-icon">🎓</div>
+                        <div class="mentor-info">
+                            <h4 data-i18n="aboutMentorTitle">Senior Editor ومدرّب (Mentor)</h4>
+                            <p data-i18n="aboutMentorText">
+                                أعمل حالياً كـ Senior Editor ومدرّب للمتدربين الجدد لنقل خبرات المونتاج الاحترافي وصناعة الإيقاع البصري، إلى جانب إدارة مشاريع الفريلانس لكبرى الشركات وصناع المحتوى. جاهز دائماً لصناعة الفارق في مشروعك القادم!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-cta-bar">
+                        <button class="primary-btn nav-btn" data-page="contact">
+                            <span data-i18n="contactBtn">تواصل معي الآن</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="2.2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                        <button class="secondary-btn nav-btn" data-page="terms">
+                            <span data-i18n="btnTermsNav">ميثاق وشروط العمل</span>
+                        </button>
+                        <button class="secondary-btn nav-btn" data-page="home" data-i18n="backBtn">
+                            الرجوع للرئيسية
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             4. CONTACT SECTION (EYE-CATCHING & STUNNING)
+             ========================================== -->
+        <section id="contact-section" class="page-section">
+            <div class="contact-container">
+                <div class="section-header text-center reveal">
+                    <span class="section-tag" data-i18n="contactTag">قنوات التواصل الرسمية</span>
+                    <h2 class="section-title" data-i18n="contactTitle">لنبدأ العمل على مشروعك القادم</h2>
+                    <p class="hero-desc" data-i18n="contactDesc" style="margin-top: 1rem;">
+                        تواصل معي مباشرة عبر القنوات الرسمية التالية لمناقشة أفكارك وتحويلها لعمل بصري يبهر جمهورك.
+                    </p>
+                </div>
+
+                <div class="contact-cards-grid reveal">
+
+                    <!-- WhatsApp Business Card -->
+                    <div class="contact-card whatsapp-card">
+                        <div>
+                            <div class="contact-card-top">
+                                <div class="contact-icon-bubble whatsapp-icon-bg">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                                        <path
+                                            d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="contact-card-title" data-i18n="whatsappCardTitle">واتساب بيزنس</h3>
+                                    <span class="contact-card-badge" data-i18n="whatsappBadge">رد سريع ومباشر</span>
+                                </div>
+                            </div>
+                            <div class="contact-card-value">01147003530</div>
+                            <p class="contact-card-desc" data-i18n="whatsappCardDesc">
+                                تواصل معي بنقرة واحدة لفتح محادثة واتساب شات فورية ومباشرة بدون الحاجة لتسجيل الرقم
+                                مسبقاً.
+                            </p>
+                        </div>
+                        <div class="contact-card-actions">
+                            <a href="https://wa.me/201147003530?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D9%85%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC%20%D9%88%D9%85%D9%88%D8%B4%D9%86%20%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83"
+                                target="_blank" rel="noopener noreferrer" class="contact-action-btn btn-whatsapp">
+                                <span data-i18n="btnOpenWhatsApp">فتح شات واتساب فوري</span> 💬
+                            </a>
+                            <button class="copy-btn" data-copy-target="01147003530" title="Copy Number"
+                                data-i18n="copyNumberBtn">
+                                نسخ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Card -->
+                    <div class="contact-card instagram-card">
+                        <div>
+                            <div class="contact-card-top">
+                                <div class="contact-icon-bubble instagram-icon-bg">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="contact-card-title" data-i18n="instagramCardTitle">حساب الإنستجرام</h3>
+                                    <span class="contact-card-badge" data-i18n="instagramBadge">الأعمال واليوميات</span>
+                                </div>
+                            </div>
+                            <div class="contact-card-value">@the.altony</div>
+                            <p class="contact-card-desc" data-i18n="instagramCardDesc">
+                                تابع جديد مشاريعي، ووراء الكواليس، وتواصل معي عبر الرسائل المباشرة في أي وقت.
+                            </p>
+                        </div>
+                        <div class="contact-card-actions">
+                            <a href="https://www.instagram.com/the.altony/" target="_blank" rel="noopener noreferrer"
+                                class="contact-action-btn btn-instagram">
+                                <span data-i18n="btnOpenInstagram">زيارة حسابي على إنستجرام</span> 📸
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-card email-card">
+                        <div>
+                            <div class="contact-card-top">
+                                <div class="contact-icon-bubble email-icon-bg">
+                                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="contact-card-title" data-i18n="emailCardTitle">البريد الإلكتروني</h3>
+                                    <span class="contact-card-badge" data-i18n="emailBadge">العقود والمشاريع
+                                        الرسمية</span>
+                                </div>
+                            </div>
+                            <div class="contact-card-value">altonyu830@gmail.com</div>
+                            <p class="contact-card-desc" data-i18n="emailCardDesc">
+                                أرسل تفاصيل مشروعك أو طلبات عروض الأسعار والتعاقدات الرسمية، وسيتم الرد خلال ساعات.
+                            </p>
+                        </div>
+                        <div class="contact-card-actions">
+                            <a href="mailto:altonyu830@gmail.com" class="contact-action-btn btn-email">
+                                <span data-i18n="btnOpenEmail">إرسال إيميل</span> ✉️
+                            </a>
+                            <button class="copy-btn" data-copy-target="altonyu830@gmail.com" title="Copy Email"
+                                data-i18n="copyEmailBtn">
+                                نسخ
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Inquiry Banner -->
+                <div class="inquiry-banner reveal">
+                    <h3 data-i18n="inquiryTitle">جاهز لبدء مشروع نوعي ومختلف؟</h3>
+                    <p data-i18n="inquiryDesc">
+                        سواء كان مشروعك إعلاناً تجارياً، ريلز لفيديو فيرال، أو إنتاج وثائقي متكامل، أنا هنا لضمان أعلى
+                        مستوى إخراجي.
+                    </p>
+                    <a href="https://wa.me/201147003530?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D9%85%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%AF%D8%A1%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AC%D8%AF%D9%8A%D8%AF"
+                        target="_blank" rel="noopener noreferrer" class="primary-btn whatsapp-cta-btn">
+                        <span>تواصل معي على واتساب الآن</span> 🚀
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. TERMS & WORKING ETHICS (IMPORTANT)
+             ========================================== -->
+        <section id="terms-section" class="page-section">
+            <div class="terms-container">
+                <div class="terms-header-box reveal">
+                    <div class="terms-badge" data-i18n="termsTag">محددات وضوابط العمل ⚖️</div>
+                    <h2 class="section-title" data-i18n="termsTitle">شروط وميثاق العمل المهني</h2>
+                    <p class="terms-intro" data-i18n="termsIntro">
+                        من مبادئي الراسخة أن الإتقان الحقيقي يقترن بالقيم والأخلاق. هذه الضوابط ثابتة ولا تقبل الاستثناء
+                        لضمان البركة والاحترافية الكاملة:
+                    </p>
+                </div>
+
+                <div class="terms-cards-stack reveal">
+
+                    <!-- Term 1: Modesty & Hijab -->
+                    <div class="term-card">
+                        <div class="term-icon-wrapper">
+                            <span>🧕</span>
+                        </div>
+                        <div class="term-content">
+                            <h3 data-i18n="term1Title">1. ضابط الحجاب والاحتشام</h3>
+                            <p data-i18n="term1Desc">
+                                أعتذر بشكل قاطع عن العمل على أي محتوى تظهر فيه فتيات غير محجبات. يُشترط في أي ظهور نسائي
+                                في المحتوى أن يكون بالحجاب الكامل والاحتشام التام دون تبرج.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Term 2: No Concerts or Festivals -->
+                    <div class="term-card">
+                        <div class="term-icon-wrapper">
+                            <span>🚫</span>
+                        </div>
+                        <div class="term-content">
+                            <h3 data-i18n="term2Title">2. الحفلات والمهرجانات الغنائية</h3>
+                            <p data-i18n="term2Desc">
+                                لا أعمل على تصوير أو تغطية أو مونتاج الحفلات الغنائية أو المهرجانات الموسيقية أو أي
+                                فعاليات صاخبة ومماثلة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Term 3: No Alcohol, Gambling, Betting -->
+                    <div class="term-card">
+                        <div class="term-icon-wrapper">
+                            <span>🛡️</span>
+                        </div>
+                        <div class="term-content">
+                            <h3 data-i18n="term3Title">3. الخمور والمراهنات والمحرمات</h3>
+                            <p data-i18n="term3Desc">
+                                أرفض تماماً العمل مع أو الترويج لمنتجات الكحوليات، المشروبات الروحية، منصات الرهانات
+                                والقمار، أو أي منتجات محرمة أو غير مشروعة.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="term-guarantee-box reveal" data-i18n="termGuarantee">
+                    هذه الشروط وُضعت عن قناعة تامة ومبدأ ثابت، وهي ما تضمن أعلى جودة وتكريس كامل للجهد في المشاريع
+                    الهادفة والراقية.
+                </div>
+
+                <div style="text-align: center; margin-top: 3.5rem;">
+                    <button class="primary-btn nav-btn" data-page="contact">
+                        <span>تواصل معي للبدء</span> ✉️
+                    </button>
+                    <button class="secondary-btn nav-btn" data-page="home" data-i18n="backBtn"
+                        style="margin-right: 1rem;">
+                        الرجوع للرئيسية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Details Modal Dialog (Glassmorphic Luxury Dialog) -->
+        <div class="category-modal" id="categoryModal" aria-hidden="true">
+            <div class="category-modal-backdrop" id="categoryModalBackdrop"></div>
+            <div class="category-modal-dialog" id="categoryModalDialog">
+                <div class="modal-theme-dynamic-bg" id="modalThemeDynamicBg"></div>
+                <!-- Top Bar -->
+                <div class="modal-top-bar">
+                    <button class="modal-nav-btn" id="categoryModalBack">
+                        <span data-i18n="modalBackBtn">← العودة للمشاريع</span>
+                    </button>
+                    <div class="modal-top-controls">
+                        <button class="modal-nav-btn" id="categoryModalExpand" title="تكبير الشاشة">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+                            </svg>
+                            <span class="expand-text">فتح الصفحة كاملة</span>
+                        </button>
+                        <button class="category-modal-close" id="categoryModalClose" aria-label="Close">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scrollable Body -->
+                <div class="modal-scroll-body" id="modalScrollBody">
+                    <div class="modal-generic-header" id="modalGenericHeader">
+                        <div class="modal-badge-wrapper">
+                            <span class="modal-badge" id="modalBadge">ًں”¥ ط§ظ„ط£ظƒط«ط± ط·ظ„ط¨ط§ظ‹</span>
+                        </div>
+                        <h3 class="modal-title" id="modalTitle">ط§ظ„ط£ط·ط¨ط§ط، ظˆط§ظ„ظ…ط¬ط§ظ„ ط§ظ„ط·ط¨ظٹ</h3>
+                        <p class="modal-desc" id="modalDesc"></p>
+                    </div>
+
+                    <!-- Standard Content removed as requested -->
+
+                    <!-- Dedicated Short Films & Documentaries Content -->
+                    <div id="modalShortFilmContent" style="display: none;">
+                        <!-- Hero / Intro -->
+                        <div class="uae-hero-box film-modal-hero">
+                            <div class="uae-badge-pill film-hero-badge">
+                                <span data-i18n="shortFilmHeroTag">🎬 شغفي الأكبر | السينما والوثائقيات</span>
+                            </div>
+                            <h2 class="uae-main-title" data-i18n="shortFilmHeroTitle">سرد درامي وثائقي ومونتاج سينمائي متقن</h2>
+                            <p class="uae-intro-desc" data-i18n="shortFilmIntroDesc">
+                                استعراض لأهم المشاريع السينمائية والوثائقية وكواليس الإنتاج الحصرية داخل الموقع.
+                            </p>
+                        </div>
+
+                        <!-- Sticky Anchor Navigation Bar for Films (Quick Jump) -->
+                        <div class="creators-sticky-bar films-sticky-bar" id="modalFilmsStickyBar">
+                            <div class="creators-anchor-nav" id="modalFilmsAnchorNav">
+                                <button class="creator-anchor-pill active" data-target="palestineProject" type="button" title="الفيلم المجهول لفلسطين">
+                                    <span style="font-size: 1.15rem; line-height: 1; margin-left: 5px;">🇵🇸</span>
+                                    <span>فيلم فلسطين</span>
+                                </button>
+                                <button class="creator-anchor-pill" data-target="ctrlZProject" type="button" title="فيلم Ctrl Z">
+                                    <span style="font-size: 1.15rem; line-height: 1; margin-left: 5px;">⚡</span>
+                                    <span>فيلم Ctrl Z</span>
+                                </button>
+                                <button class="creator-anchor-pill film-pill-egygab" data-target="egygabProject" type="button" title="وثائقي EgyGab">
+                                    <span style="font-size: 1.15rem; line-height: 1; margin-left: 5px;">🏛️</span>
+                                    <span>وثائقي EgyGab</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 1. The Unknown Film of Palestine (الفيلم المجهول لفلسطين) -->
+                        <div class="film-project-card" id="palestineProject">
+                            <div class="film-card-header">
+                                <div class="film-badge-row">
+                                    <span class="film-cat-pill" data-i18n="palestineCatPill">🇵🇸 وثائقي تاريخي وسينمائي</span>
+                                    <span class="film-meta-pill" data-i18n="palestineMetaPill">مشروع التربية العسكرية</span>
+                                </div>
+                                <h3 class="film-title" data-i18n="palestineTitle">الفيلم المجهول لفلسطين</h3>
+                                <p class="film-subtitle" data-i18n="palestineSubtitle">The Unknown Film of Palestine — سيمفونية وثائقية عن قضية أمة ونضال تاريخي</p>
+                            </div>
+
+                            <!-- Role Highlight Badge: Triple Imprint for Palestine -->
+                            <div class="film-hero-role-badge palestine-role-badge">
+                                <div class="role-badge-icon">🇵🇸</div>
+                                <div class="role-badge-text">
+                                    <span class="role-badge-title">قيادة الفريق والمونتاج والموشن جرافيك:</span>
+                                    <span class="role-badge-name">Team Lead / Editing / Graphic: <strong>@the.altony (عمر التوني)</strong></span>
+                                </div>
+                                <div class="role-badge-tag">بصمة ثلاثية 🌟</div>
+                            </div>
+
+                            <!-- Clarification Notice Box -->
+                            <div class="film-notice-box">
+                                <div class="film-notice-icon">⏳</div>
+                                <div class="film-notice-content">
+                                    <h4 data-i18n="palestineNoticeTitle">توضيح مهم حول العرض وحقوق الملكية:</h4>
+                                    <p data-i18n="palestineNoticeDesc">
+                                        الفيلم الكامل مدته <strong>ساعة إلا ثلث (40 دقيقة)</strong>، ولكن المعروض هنا مقطتفات حصرية فقط لأن حقوق النشر والملكية الكاملة تعود لـ <strong>العقيد هيثم</strong> وسيتم نشره رسمياً في وقت لاحق، ولهذا سُمي بـ <strong>"الفيلم المجهول لفلسطين"</strong>.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Narrative Story Box -->
+                            <div class="film-story-box">
+                                <h4 class="film-section-heading" data-i18n="palestineStoryTitle">قصة العمل والرؤية الإخراجية:</h4>
+                                <p class="film-story-paragraph" data-i18n="palestineStoryP1">
+                                    هذان جزئين من هذا الفيلم الذي قمنا بعمله أنا وأشخاص رائعين، متميزين ومحبين لعملهم في مشروع التربية العسكرية بطلب من العقيد هيثم (القصة الكاملة سأشاركها معكم لاحقاً).
+                                </p>
+                            </div>
+
+                            <!-- Excerpts Video Grid (Plays internally) -->
+                            <div class="film-videos-section">
+                                <h4 class="film-section-heading" data-i18n="palestineExcerptsHeading">مقتطفات الفيديو الحصرية (شاهد مباشرة في المشغل السينمائي الداخلي):</h4>
+                                <div class="film-videos-grid">
+                                    <!-- Video 1: October Excerpt (Instagram Reel) -->
+                                    <div class="film-video-card" data-film-vid="Dem_K9JRi68" data-film-type="instagram" data-film-url="https://www.instagram.com/reel/Dem_K9JRi68/" data-film-title="فيلم فلسطين | مقتطف شهر أكتوبر ونصر 1973">
+                                        <div class="film-video-thumb-wrap">
+                                            <img src="images and videos/palestine-oct-thumb.jpg" alt="مقتطف أكتوبر" class="film-video-thumb">
+                                            <div class="film-video-overlay">
+                                                <div class="film-play-btn">
+                                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                                                </div>
+                                                <span class="film-play-label">مشاهدة في المشغل السينمائي الداخلي</span>
+                                            </div>
+                                            <span class="film-video-badge">Instagram Reel 📸</span>
+                                        </div>
+                                        <div class="film-video-info">
+                                            <h5 class="film-video-name" data-i18n="palestineVid1Title">الجزء الأول: مقتطف حرب أكتوبر 1973</h5>
+                                            <p class="film-video-desc" data-i18n="palestineVid1Desc">معالجة بصرية وسرد درامي وثائقي يربط بين أكتوبر فلسطين ونصر أكتوبر العظيم ومرحلة النكسة.</p>
+                                            <div class="film-video-actions">
+                                                <button class="film-internal-btn" type="button">
+                                                    <span data-i18n="watchInternal">▶ تشغيل داخلي</span>
+                                                </button>
+                                                <a href="https://www.instagram.com/reel/Dem_K9JRi68/" target="_blank" rel="noopener noreferrer" class="film-external-btn" onclick="event.stopPropagation()">
+                                                    <span>Instagram</span> ↗
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Video 2: Chapter 3 (Google Drive Draft Cut) -->
+                                    <div class="film-video-card" data-film-vid="1QEIApHA1cdHa_b9tn8B8WFUxorUYpmZH" data-film-type="drive" data-film-url="https://drive.google.com/open?id=1QEIApHA1cdHa_b9tn8B8WFUxorUYpmZH" data-film-title="فيلم فلسطين | الفصل الثالث (النسخة غير النهائية)">
+                                        <div class="film-video-thumb-wrap">
+                                            <img src="images and videos/palestine-ch3-thumb.jpg" alt="الفصل الثالث - ثيودور هرتزل" class="film-video-thumb">
+                                            <div class="film-video-overlay">
+                                                <div class="film-play-btn">
+                                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                                                </div>
+                                                <span class="film-play-label" data-i18n="playInCinema">مشاهدة في المشغل السينمائي الداخلي</span>
+                                            </div>
+                                            <span class="film-video-badge" style="background: rgba(37, 99, 235, 0.9);">Google Drive 📁</span>
+                                        </div>
+                                        <div class="film-video-info">
+                                            <h5 class="film-video-name" data-i18n="palestineVid2Title">الفصل الثالث (النسخة الأولية غير النهائية - Draft Cut)</h5>
+                                            <p class="film-video-desc" data-i18n="palestineVid2Desc">مقتطف سينمائي حصري من الفصل الثالث كنسخة مونتاج أولية توضح تدفق المشاهد وبناء الإيقاع.</p>
+                                            <div class="film-video-actions">
+                                                <button class="film-internal-btn" type="button">
+                                                    <span data-i18n="watchInternal">▶ تشغيل داخلي</span>
+                                                </button>
+                                                <a href="https://drive.google.com/open?id=1QEIApHA1cdHa_b9tn8B8WFUxorUYpmZH" target="_blank" rel="noopener noreferrer" class="film-external-btn" onclick="event.stopPropagation()">
+                                                    <span>Google Drive</span> ↗
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Full Credits Block (Compact & Sleek) -->
+                            <div class="film-credits-box">
+                                <div class="film-credits-header">
+                                    <span class="credits-badge-icon">🎬</span>
+                                    <h4 class="film-section-heading" data-i18n="palestineCreditsHeading">صناع الفيلم وطاقم العمل (Credits):</h4>
+                                </div>
+                                <div class="film-credits-grid">
+                                    <div class="film-credit-item is-lead">
+                                        <span class="credit-role">👑 Team Leader:</span>
+                                        <a href="https://www.instagram.com/the.altony/" target="_blank" rel="noopener noreferrer" class="credit-person">@the.altony (عمر التوني)</a>
+                                    </div>
+                                    <div class="film-credit-item is-lead">
+                                        <span class="credit-role">✂️ Editor:</span>
+                                        <a href="https://www.instagram.com/the.altony/" target="_blank" rel="noopener noreferrer" class="credit-person">@the.altony (عمر التوني)</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">✍️ Script:</span>
+                                        <div class="credit-group">
+                                            <a href="https://www.instagram.com/hazemibrahim_103/" target="_blank" rel="noopener noreferrer" class="credit-person">@hazemibrahim_103</a>
+                                            <span class="credit-sep">&</span>
+                                            <a href="https://www.instagram.com/the.altony/" target="_blank" rel="noopener noreferrer" class="credit-person">@the.altony</a>
+                                        </div>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎞️ Assistant Editor:</span>
+                                        <div class="credit-group">
+                                            <a href="https://www.instagram.com/hazemibrahim_103/" target="_blank" rel="noopener noreferrer" class="credit-person">@hazemibrahim_103</a>
+                                            <span class="credit-sep">&</span>
+                                            <a href="https://www.instagram.com/amir.ashraf152/" target="_blank" rel="noopener noreferrer" class="credit-person">@amir.ashraf152</a>
+                                        </div>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎙️ Voiceover (VO):</span>
+                                        <a href="https://www.instagram.com/abdallaahsam/" target="_blank" rel="noopener noreferrer" class="credit-person">@abdallaahsam</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Behind The Scenes Gallery (4 photos) -->
+                            <div class="film-bts-box">
+                                <h4 class="film-section-heading" data-i18n="palestineBtsHeading">كواليس الصناعة والمونتاج والعتاد (اضغط للتكبير في المشغل):</h4>
+                                <div class="film-bts-grid">
+                                    <div class="film-bts-card" data-img-src="images and videos/palestine-bts-1.jpg" data-img-title="كواليس مونتاج وجرافيك ثيودور هرتزل - فيلم فلسطين">
+                                        <img src="images and videos/palestine-bts-1.jpg" alt="كواليس جرافيك هرتزل" loading="lazy">
+                                        <div class="film-bts-overlay">
+                                            <span class="bts-zoom-icon">🔍</span>
+                                            <span class="bts-title">جرافيك وتتبع حركة ثيودور هرتزل</span>
+                                        </div>
+                                    </div>
+                                    <div class="film-bts-card" data-img-src="images and videos/palestine-bts-2.jpg" data-img-title="تركيبة طبقات أفتر إفكتس المعقدة (After Effects Composition)">
+                                        <img src="images and videos/palestine-bts-2.jpg" alt="طبقات أفتر إفكتس" loading="lazy">
+                                        <div class="film-bts-overlay">
+                                            <span class="bts-zoom-icon">🔍</span>
+                                            <span class="bts-title">طبقات After Effects المتداخلة والمؤثرات</span>
+                                        </div>
+                                    </div>
+                                    <div class="film-bts-card" data-img-src="images and videos/palestine-timeline.jpg" data-img-title="التايم لاين السينمائي الضخم في Premiere Pro (palestine v3 - Edited)">
+                                        <img src="images and videos/palestine-timeline.jpg" alt="تايم لاين بريمير برو" loading="lazy">
+                                        <div class="film-bts-overlay">
+                                            <span class="bts-zoom-icon">🔍</span>
+                                            <span class="bts-title">التايم لاين الشامل في Premiere Pro (v3)</span>
+                                        </div>
+                                    </div>
+                                    <div class="film-bts-card" data-img-src="images and videos/palestine-gear.jpg" data-img-title="عتاد ومعدات تسجيل الصوت الميداني الاحترافية LENS 50">
+                                        <img src="images and videos/palestine-gear.jpg" alt="عتاد تسجيل الصوت" loading="lazy">
+                                        <div class="film-bts-overlay">
+                                            <span class="bts-zoom-icon">🔍</span>
+                                            <span class="bts-title">عتاد تسجيل وهندسة الصوت اللاسلكي LENS 50</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider between Film 1 & Film 2 -->
+                        <div class="film-project-divider">
+                            <div class="film-divider-line"></div>
+                        </div>
+
+                        <!-- 2. Ctrl Z Short Film -->
+                        <div class="film-project-card" id="ctrlZProject">
+                            <div class="film-card-header">
+                                <div class="film-badge-row">
+                                    <span class="film-cat-pill" style="border-color: rgba(6, 182, 212, 0.4); background: rgba(6, 182, 212, 0.12); color: #22d3ee;" data-i18n="ctrlZCatPill">⚡ فيلم روائي قصير وخيال علمي</span>
+                                    <span class="film-meta-pill" style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.15); color: #fbbf24;" data-i18n="ctrlZMetaPill">✨ دور ثلاثي محوري للتوني</span>
+                                </div>
+                                <h3 class="film-title" data-i18n="ctrlZTitle">فيلم Ctrl Z</h3>
+                                <p class="film-subtitle" data-i18n="ctrlZSubtitle">مشروع صغير اشتغلنا عليه وجيه الوقت نشارككم بيه... !What if Ctrl+Z work in real life</p>
+                            </div>
+
+                            <!-- Role Highlight Badge -->
+                            <div class="film-hero-role-badge">
+                                <div class="role-badge-icon">🎬</div>
+                                <div class="role-badge-text">
+                                    <span class="role-badge-title" data-i18n="ctrlZRoleHeading">المونتاج والتدريج اللوني والمؤثرات البصرية:</span>
+                                    <span class="role-badge-name">Edit / Coloring / VFX: <strong>@the.altony (عمر التوني)</strong></span>
+                                </div>
+                                <div class="role-badge-tag" data-i18n="ctrlZRoleTag">بصمة فنية ثلاثية 🌟</div>
+                            </div>
+
+                            <!-- Video Player (Instagram Reel with Official Poster Thumbnail) -->
+                            <div class="film-videos-section">
+                                <div class="film-video-card is-featured" data-film-vid="DUleSd4iCqY" data-film-type="instagram" data-film-url="https://www.instagram.com/reel/DUleSd4iCqY/" data-film-title="فيلم قصير | Ctrl Z - What if Ctrl+Z work in real life">
+                                    <div class="film-video-thumb-wrap" style="aspect-ratio: 16/9; max-height: 420px;">
+                                        <img src="images and videos/ctrl-z-thumb.jpg" alt="بوستر فيلم Ctrl Z" class="film-video-thumb" style="object-position: center 25%;">
+                                        <div class="film-video-overlay">
+                                            <div class="film-play-btn">
+                                                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                                            </div>
+                                            <span class="film-play-label" data-i18n="playInCinema">مشاهدة الفيلم في المشغل السينمائي الداخلي</span>
+                                        </div>
+                                        <span class="film-video-badge">Instagram Reel 📸</span>
+                                    </div>
+                                    <div class="film-video-info">
+                                        <h5 class="film-video-name" data-i18n="ctrlZFullTitle">شاهد فيلم Ctrl Z كاملاً</h5>
+                                        <p class="film-video-desc" data-i18n="ctrlZFullDesc">قصة شاب يحاول التراجع عن أخطاء وقرارات الماضي الحقيقية بضغطة زر، بإيقاع درامي متصاعد وتدريج لوني يجسد تقلبات المزاج النفسي.</p>
+                                        <div class="film-video-actions">
+                                            <button class="film-internal-btn" type="button">
+                                                <span data-i18n="watchInternal">▶ تشغيل داخلي في الموقع</span>
+                                            </button>
+                                            <a href="https://www.instagram.com/reel/DUleSd4iCqY/" target="_blank" rel="noopener noreferrer" class="film-external-btn" onclick="event.stopPropagation()">
+                                                <span>Instagram</span> ↗
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Full Credits Block (Compact & Sleek) -->
+                            <div class="film-credits-box">
+                                <div class="film-credits-header">
+                                    <span class="credits-badge-icon">🎬</span>
+                                    <h4 class="film-section-heading" data-i18n="ctrlZCreditsHeading">صناع فيلم Ctrl Z (Credits):</h4>
+                                </div>
+                                <div class="film-credits-grid">
+                                    <div class="film-credit-item is-lead" style="border-color: rgba(6, 182, 212, 0.55); background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(147, 51, 234, 0.18));">
+                                        <span class="credit-role" style="color: #67e8f9;">⭐ Edit / Coloring / VFX:</span>
+                                        <a href="https://www.instagram.com/the.altony/" target="_blank" rel="noopener noreferrer" class="credit-person" style="color: #a5f3fc; font-weight: 800;">@the.altony (عمر التوني)</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎬 Written / Directed:</span>
+                                        <a href="https://www.instagram.com/youssefysn22/" target="_blank" rel="noopener noreferrer" class="credit-person">@youssefysn22</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎥 DOP:</span>
+                                        <a href="https://www.instagram.com/nabil_nosir/" target="_blank" rel="noopener noreferrer" class="credit-person">@nabil_nosir</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎵 Music:</span>
+                                        <a href="https://www.instagram.com/shady_badr_1/" target="_blank" rel="noopener noreferrer" class="credit-person">@shady_badr_1</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎨 Graphic:</span>
+                                        <a href="https://www.instagram.com/ra7iim_studio/" target="_blank" rel="noopener noreferrer" class="credit-person">@ra7iim_studio</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">📋 1st AD:</span>
+                                        <div class="credit-group">
+                                            <a href="https://www.instagram.com/abdelrahman_sameh_/" target="_blank" rel="noopener noreferrer" class="credit-person">@abdelrahman_sameh_</a>
+                                            <span class="credit-sep">/</span>
+                                            <a href="https://www.instagram.com/ahmeddshawky/" target="_blank" rel="noopener noreferrer" class="credit-person">@ahmeddshawky</a>
+                                        </div>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">📋 2nd AD:</span>
+                                        <a href="https://www.instagram.com/nade.r12e/" target="_blank" rel="noopener noreferrer" class="credit-person">@nade.r12e</a>
+                                    </div>
+                                    <div class="film-credit-item">
+                                        <span class="credit-role">🎭 Actors:</span>
+                                        <div class="credit-group">
+                                            <a href="https://www.instagram.com/iamomarfathy/" target="_blank" rel="noopener noreferrer" class="credit-person">@iamomarfathy</a>
+                                            <span class="credit-sep">/</span>
+                                            <a href="https://www.instagram.com/mohamedelshaffeiy/" target="_blank" rel="noopener noreferrer" class="credit-person">@mohamedelshaffeiy</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Behind The Scenes / Color Grading (Image 5) -->
+                            <div class="film-bts-box">
+                                <h4 class="film-section-heading" data-i18n="ctrlZGradingHeading">كواليس التدريج اللوني (DaVinci Resolve Studio Color Grading):</h4>
+                                <div class="film-bts-grid single-bts">
+                                    <div class="film-bts-card is-wide" data-img-src="images and videos/ctrl-z-grading.jpg" data-img-title="كواليس التدريج اللوني وشبكة العقد (Node Graph) لفيلم Ctrl Z في DaVinci Resolve Studio">
+                                        <img src="images and videos/ctrl-z-grading.jpg" alt="تدريج لوني فيلم Ctrl Z" loading="lazy">
+                                        <div class="film-bts-overlay">
+                                            <span class="bts-zoom-icon">🔍</span>
+                                            <span class="bts-title" data-i18n="ctrlZGradingTitle">شاشة التلوين وشجرة العقد (Node Tree) في DaVinci Resolve Studio — اضغط للتكبير</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider between Film 2 & Film 3 -->
+                        <div class="film-project-divider">
+                            <div class="film-divider-line"></div>
+                        </div>
+
+                        <!-- 3. EGYGAB Documentary & Cinematic Editing -->
+                        <div class="film-project-card" id="egygabProject">
+                            <div class="film-card-header">
+                                <div class="film-badge-row">
+                                    <span class="film-cat-pill" style="border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.12); color: #f87171;" data-i18n="egygabCatPill">🏛️ مونتاج سينمائي وتوثيق عقاري</span>
+                                    <span class="film-meta-pill" data-i18n="egygabMetaPill">شركة egygab للتطوير العقاري</span>
+                                </div>
+                                <h3 class="film-title" data-i18n="egygabTitle">egygab — مونتاج سينمائي وتوثيق مشاريع</h3>
+                                <p class="film-subtitle" data-i18n="egygabSubtitle">سرد بصري وثائقي يعكس جودة وفخامة المشاريع المعمارية بإيقاع هادئ وتدريج لوني فخم</p>
+                            </div>
+
+                            <div class="film-videos-section">
+                                <div class="film-video-card is-featured" data-film-vid="wfk7GyrL080" data-film-type="youtube" data-film-url="https://youtu.be/wfk7GyrL080" data-film-title="egygab — مونتاج سينمائي وتوثيق مشاريع">
+                                    <div class="film-video-thumb-wrap" style="aspect-ratio: 16/9; max-height: 380px;">
+                                        <img src="https://img.youtube.com/vi/wfk7GyrL080/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/wfk7GyrL080/hqdefault.jpg'" alt="egygab مونتاج سينمائي" class="film-video-thumb">
+                                        <div class="film-video-overlay">
+                                            <div class="film-play-btn">
+                                                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+                                            </div>
+                                            <span class="film-play-label" data-i18n="playInCinema">مشاهدة في المشغل السينمائي 16:9</span>
+                                        </div>
+                                        <span class="film-video-badge" style="background: rgba(239, 68, 68, 0.85);">YouTube 🎬</span>
+                                    </div>
+                                    <div class="film-video-info">
+                                        <h5 class="film-video-name" data-i18n="egygabFullTitle">egygab — المونتاج السينمائي الكامل</h5>
+                                        <p class="film-video-desc" data-i18n="egygabFullDesc">توثيق سينمائي لمعالم ومشاريع إيجي جاب بأسلوب إعلاني وثائقي راقٍ، ضبط درجات الألوان لتبرز جمال المعمار، مع هندسة صوتية موسيقية محيطية.</p>
+                                        <div class="film-video-actions">
+                                            <button class="film-internal-btn" type="button">
+                                                <span data-i18n="watchInternal">▶ تشغيل داخلي في الموقع</span>
+                                            </button>
+                                            <a href="https://youtu.be/wfk7GyrL080" target="_blank" rel="noopener noreferrer" class="film-external-btn" onclick="event.stopPropagation()">
+                                                <span data-i18n="watchOnYouTube">مشاهدة على YouTube</span> ↗
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- UAE Content -->
+                    <div id="modalUAEContent" style="display: none;">
+                        <div class="uae-hero-box">
+                            <div class="uae-badge-pill">
+                                <span class="uae-flag-dot"></span>
+                                <span data-i18n="uaeBadgePill">مشاريع دولة الإمارات العربية المتحدة</span>
+                            </div>
+                            <h2 class="uae-main-title" data-i18n="uaeMainTitle">أعمال وإبداع بروح إماراتية فاخرة</h2>
+                            <div class="uae-zayed-quote">
+                                <span class="quote-mark">“</span>
+                                <p class="quote-text" data-i18n="uaeQuote">إن بناء الإنسان هو الأساس، ومن لا يعرف ماضيه
+                                    لا يمكن أن يعيش حاضره ومستقبله.</p>
+                                <span class="quote-author" data-i18n="uaeQuoteAuthor">— الشيخ زايد بن سلطان آل نهيان،
+                                    طيب الله ثراه</span>
+                            </div>
+                            <p class="uae-intro-desc" data-i18n="uaeIntroDesc">مونتاج وإخراج بصري فائق الدقة يعكس فخامة
+                                التطوير العقاري والسياحة والابتكار الحكومي في دبي وأبوظبي.</p>
+                        </div>
+
+                        <!-- UAE Videos Grid in Liquid Box -->
+                        <div class="uae-videos-liquid-box">
+                        <div class="uae-section-header">
+                            <h3 class="uae-section-subtitle">
+                                <span data-i18n="uaeVideosHeading">كافة مشاريع وفيديوهات الإمارات</span>
+                                <span class="sub-line"></span>
+                            </h3>
+                        </div>
+                        <div class="uae-triplets-grid" id="uaeVideosGrid"></div>
+                        </div>
+                    </div>
+
+                    <!-- Media Post Content -->
+                    <div id="modalMediaPostContent" style="display: none;">
+                        <div class="media-post-liquid-box">
+                        <div class="uae-section-header">
+                            <h3 class="uae-section-subtitle">
+                                <span data-i18n="mediaPostHeading">فيديوهات ومشاريع الميديا والبوست برودكشن</span>
+                                <span class="sub-line"></span>
+                            </h3>
+                        </div>
+                        <div class="uae-triplets-grid" id="mediaPostVideosGrid"></div>
+                        </div>
+                    </div>
+
+                    <!-- Branded Ads Content -->
+                    <div id="modalBrandedContent" style="display: none;">
+                        <div class="branded-ads-liquid-box">
+                        <div class="uae-section-header">
+                            <h3 class="uae-section-subtitle">
+                                <span data-i18n="brandedAdsHeading">إعلانات تجارية لأكبر البراندات والشركات
+                                    العالمية</span>
+                                <span class="sub-line"></span>
+                            </h3>
+                        </div>
+                        <div class="branded-ads-grid" id="brandedAdsGrid"></div>
+                        </div>
+                    </div>
+
+                    <!-- Doctors Content -->
+                                        <!-- Doctors Content -->
+                    <div id="modalDoctorsContent" style="display: none;">
+                        <div class="creators-sticky-bar doctors-sticky-bar" id="modalDoctorsStickyBar">
+                            <div class="creators-anchor-nav" id="modalDoctorsAnchorNav">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+                        <div class="doctors-stacked-container" id="doctorsStackedContainer"></div>
+                    </div>
+
+                    <!-- Dedicated Top Creators Showcase (Stacked Creators Hub inside Modal) -->
+                    <div class="modal-creators-content" id="modalCreatorsContent" style="display: none;">
+                        <!-- Creators Hero -->
+                        <div class="uae-hero-box creators-modal-hero">
+                            <div class="uae-badge-pill"
+                                style="border-color: rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.12); color: #fbbf24;">
+                                <span data-i18n="creatorsModalBadge">👑 نخبة صناع المحتوى | Elite Content Creators</span>
+                            </div>
+                            <h2 class="uae-main-title" data-i18n="creatorsModalTitle">سرد قصصي ومونتاج يحقق ملايين المشاهدات</h2>
+
+                            <div class="uae-zayed-quote" style="border-right-color: #f59e0b !important;">
+                                <div class="quote-mark">“</div>
+                                <p class="quote-text" data-i18n="creatorsModalQuote">صناعة محتوى متقن يضمن أعلى معدلات البقاء والتفاعل.</p>
+                                <span class="quote-author" data-i18n="creatorsModalAuthor">— عمر التوني | مونتير محترف</span>
+                            </div>
+
+                            <p class="uae-intro-desc" data-i18n="creatorsModalDesc">
+                                نماذج وبصمات مونتاجية لأبرز صناع المحتوى في العالم العربي.
+                            </p>
+                        </div>
+
+                        <!-- Sticky Anchor Navigation Bar inside Modal -->
+                        <div class="creators-sticky-bar" id="modalCreatorsStickyBar">
+                            <div class="creators-anchor-nav" id="modalCreatorsAnchorNav">
+                                <!-- Populated dynamically by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Creators Stacked Container inside Modal -->
+                        <div class="creators-stacked-container" id="modalCreatorsStackedContainer">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Fixed Footer Other Projects Showcase & Navigation -->
+                    <div class="modal-fixed-footer">
+                        <!-- Divider Line indicating end of projects -->
+                        <div class="modal-projects-end-divider">
+                            <div class="end-divider-glow-bar"></div>
+                        </div>
+
+                        <!-- Other Projects / Categories Browser -->
+                        <div class="modal-other-projects-section" id="modalOtherProjectsSection">
+                            <div class="other-projects-header">
+                                <span class="other-projects-badge" data-i18n="exploreOtherBadge">✨ استكشف باقي التخصصات</span>
+                                <h4 class="other-projects-title" data-i18n="exploreOtherTitle">تصفح باقي المشاريع والأعمال الإبداعية</h4>
+                            </div>
+                            <div class="other-projects-grid">
+                                <!-- 01. Top Creators -->
+                                <button class="other-project-card gold-border" type="button" data-switch-cat="top-creators">
+                                    <div class="op-card-top">
+                                        <span class="op-num">01</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catTopCreators">كبار صناع المحتوى</span>
+                                        <span class="op-sub">Top Creators</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+
+                                <!-- 02. Doctors -->
+                                <button class="other-project-card green-border" type="button" data-switch-cat="doctors">
+                                    <div class="op-card-top">
+                                        <span class="op-num">02</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catDoctors">الأطباء والمجال الطبي</span>
+                                        <span class="op-sub">Medical Specialists</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+
+                                <!-- 03. UAE Special -->
+                                <button class="other-project-card green-border" type="button" data-switch-cat="uae-special">
+                                    <div class="op-card-top">
+                                        <span class="op-num">03</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catUAESpecial">المحتوى الإماراتي</span>
+                                        <span class="op-sub">UAE Luxury Content</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+
+                                <!-- 04. Branded Ads -->
+                                <button class="other-project-card green-border" type="button" data-switch-cat="branded-ads">
+                                    <div class="op-card-top">
+                                        <span class="op-num">04</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catBrandedAds">إعلانات البراندات</span>
+                                        <span class="op-sub">Branded Commercials</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+
+                                <!-- 05. Short Films -->
+                                <button class="other-project-card green-border" type="button" data-switch-cat="short-film">
+                                    <div class="op-card-top">
+                                        <span class="op-num">05</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catShortFilms">أفلام قصيرة ووثائقية</span>
+                                        <span class="op-sub">Cinematic & Documentaries</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+
+                                <!-- 06. Media Post -->
+                                <button class="other-project-card green-border" type="button" data-switch-cat="media-post">
+                                    <div class="op-card-top">
+                                        <span class="op-num">06</span>
+                                        <span class="op-status-tag" style="display: none;">القسم الحالي</span>
+                                    </div>
+                                    <div class="op-info">
+                                        <span class="op-name" data-i18n="catMediaPost">ميديا وبوست برودكشن</span>
+                                        <span class="op-sub">Media & Post Production</span>
+                                    </div>
+                                    <div class="op-card-bottom">
+                                        <span class="op-action-label">استعراض التخصص</span>
+                                        <span class="op-arrow">←</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Actions Strip: Jump to Terms & Back to Projects -->
+                        <div class="modal-nav-actions-strip">
+                            <button class="primary-btn modal-terms-jump-btn" id="modalJumpTermsBtn" type="button">
+                                <span>⚖️ الانتقال لشروط وضوابط العمل</span>
+                            </button>
+                            <button class="secondary-btn modal-back-footer-btn" id="modalBackFooterBtn" type="button">
+                                <span data-i18n="modalBackBtn">← العودة للمشاريع</span>
+                            </button>
+                            <a href="https://wa.me/201147003530" target="_blank" rel="noopener noreferrer"
+                                class="primary-btn modal-cta-btn" id="modalWhatsAppBtn">
+                                <span data-i18n="modalRequestBtn">طلب مشروع عبر واتساب</span> 💬
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Scroll to Top inside Modal -->
+                <button class="modal-floating-scroll-top" id="categoryModalScrollTop" title="العودة للأعلى">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Fullscreen Cinema Lightbox Modal -->
+        <div class="uae-cinema-modal" id="uaeCinemaModal" aria-hidden="true">
+            <div class="uae-cinema-backdrop" id="uaeCinemaBackdrop"></div>
+            <div class="uae-cinema-dialog">
+                <div class="uae-cinema-topbar">
+                    <div class="uae-cinema-title-wrap">
+                        <span class="uae-cinema-pill">CINEMA MODE</span>
+                        <h4 class="uae-cinema-video-title" id="uaeCinemaVideoTitle">مشغل الفيديو السينمائي</h4>
+                    </div>
+                    <div class="uae-cinema-actions">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="uae-cinema-yt-btn"
+                            id="uaeCinemaYtBtn">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                            <span>مشاهدة على YouTube</span>
+                        </a>
+                        <button class="uae-cinema-close" id="uaeCinemaClose" aria-label="Close">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="uae-cinema-player-wrap" id="uaeCinemaPlayerWrap"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span data-i18n="logoText">التوني</span><span class="dot">.</span>
+            </div>
+            <ul class="footer-nav">
+                <li><a href="#" class="nav-btn" data-page="home" data-i18n="navHome">الرئيسية</a></li>
+                <li><a href="#" class="nav-btn" data-page="contact" data-i18n="navContact">تواصل معي</a></li>
+                <li><a href="#" class="nav-btn" data-page="terms" data-i18n="navTerms">شروط العمل</a></li>
+                <li><a href="#" class="nav-btn" data-page="about" data-i18n="navAbout">عن التوني</a></li>
+            </ul>
+            <p data-i18n="footerText">© 2026 التوني (Omar Ramadan Altony). جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
